@@ -1,9 +1,10 @@
 console.log("Woohhoooo we are working!");
 import './styles/index.css';
 import HomeImage from './assets/home.svg';
-import Menu from './assets/menu.svg';
-import Contact from './assets/contacts.svg';
+import MenuImage from './assets/menu.svg';
+import ContactImage from './assets/contacts.svg';
 import {Home} from './js/home.js';
+import {Menu} from './js/menu.js';
 
 function component(){
     const content = document.querySelector("#content");
@@ -22,7 +23,7 @@ function component(){
 
     menuButton.id = "menu";
     const menuIcon = new Image();
-    menuIcon.src = Menu;
+    menuIcon.src = MenuImage;
     menuIcon.className = "icon";
     menuButton.appendChild(menuIcon);
     menuButton.appendChild(document.createTextNode("Menu"));
@@ -30,14 +31,14 @@ function component(){
 
     contactButton.id = "contact";
     const contactIcon = new Image();
-    contactIcon.src = Contact;
+    contactIcon.src = ContactImage;
     contactIcon.className = "icon";
     contactButton.appendChild(contactIcon);
     contactButton.appendChild(document.createTextNode("Contact"));
     nav.appendChild(contactButton);
 
    
-    content.appendChild(Home());
+    content.appendChild(Menu());
 
 }
 
