@@ -5,6 +5,7 @@ import MenuImage from './assets/menu.svg';
 import ContactImage from './assets/contacts.svg';
 import {Home} from './js/home.js';
 import {Menu} from './js/menu.js';
+import {Contact} from './js/contact.js'
 
 function component(){
     const content = document.querySelector("#content");
@@ -38,7 +39,27 @@ function component(){
     nav.appendChild(contactButton);
 
    
-    content.appendChild(Menu());
+    content.appendChild(Home());
+
+    let homeClick = document.querySelector("#home");
+    let menuClick = document.querySelector("#menu");
+    let contactClick = document.querySelector("#contact");
+
+    homeClick.addEventListener('click', () => {
+        content.removeChild(content.firstChild);
+        content.appendChild(Home());
+    });
+
+    menuClick.addEventListener('click', () => {
+        content.removeChild(content.firstChild);
+        content.appendChild(Menu());
+    });
+
+    contactClick.addEventListener('click', () => {
+        content.removeChild(content.firstChild);
+        content.appendChild(Contact());
+    });
+
 
 }
 
